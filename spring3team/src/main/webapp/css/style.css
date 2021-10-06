@@ -34,18 +34,23 @@ div.category_n_recommend {
 }
 
 div.category {
+	margin-top: 20px;
+	margin-left: 50px;
 	border: 1px solid grey;
 	width: 30%
 }
 
 div.recommend {
+	margin-top: 20px;
 	margin-left: 3px;
+	margin-right: 50px;
 	border: 1px solid grey;
 	width: 70%
 }
 
 div.recommend_product {
 	width: 100%;
+	font-size: large;
 }
 
 div.product {

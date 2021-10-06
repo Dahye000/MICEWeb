@@ -14,7 +14,7 @@
 				</div>
 				<ul class="header_items">
 					<li class="header_item">
-						<a class="header_item_page_link" href="/">로그인</a>
+						<a class="header_item_page_link" href="login.jsp">로그인</a>
 					</li>
 					<li class="header_item">
 						<a class="header_item_page_link" href="/">회원가입</a>
