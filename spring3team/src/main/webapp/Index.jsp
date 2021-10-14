@@ -17,7 +17,7 @@
 						<a class="header_item_page_link" href="login.jsp">로그인</a>
 					</li>
 					<li class="header_item">
-						<a class="header_item_page_link" href="/">회원가입</a>
+						<a class="header_item_page_link" href="Join.jsp">회원가입</a>
 					</li>
 					<li class="header_item">
 						<a class="header_item_page_link" href="/">관심상품</a>
