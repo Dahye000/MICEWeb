@@ -7,8 +7,6 @@ import com.mice.user.MemberDto;
 import com.mice.user.Impl.MemberDao;
 import com.mice.view.controller.Controller;
 
-
-
 public class LoginController implements Controller {
 
 	@Override

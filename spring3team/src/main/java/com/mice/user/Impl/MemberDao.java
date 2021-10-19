@@ -19,6 +19,8 @@ public class MemberDao {
 	
     public boolean loginCheck(String id, String password) {
     	
+    	System.out.println("dao½Ç½Ã");
+    	
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         boolean loginCon = false;
@@ -38,6 +40,29 @@ public class MemberDao {
         }
         return loginCon;
     }	
+    
+    public boolean adLoginCheck(String admin_id, String admin_passwd) {
+    	
+    	PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        boolean loginCon = false;
+        try {
+        	con = com.mice.common.JdbcConnectUtil.getConnection();
+            String strQuery1 = "select admin_id, admin_passwd from admin where admin_id = ? and admin_passwd = ?";
+
+            pstmt = con.prepareStatement(strQuery1);
+            pstmt.setString(1, admin_id);
+            pstmt.setString(2, admin_passwd);
+            rs = pstmt.executeQuery();
+            loginCon = rs.next();
+        } catch (Exception ex) {
+            System.out.println("Exception" + ex);
+        } finally {
+        	com.mice.common.JdbcConnectUtil.close(con, pstmt, null);
+        }
+        return loginCon;
+    	
+    }
 	
     public boolean memberInsert(com.mice.user.MemberDto mDTO) {
         Connection con = null;

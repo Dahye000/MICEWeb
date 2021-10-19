@@ -33,13 +33,17 @@ public class DispatcherServlet extends HttpServlet {
 	}
 
 	private void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// 1. 클라이언트의 요청 path 정보 추출
 		String uri = request.getRequestURI();
 		String path = uri.substring(uri.lastIndexOf("/"));
 
+		// 2. HandlerMapping을 통해 path에 해당하는 Controller 검색
 		Controller ctrl = handlerMapping.getController(path);
 		
+		// 3. 검색된 Controller 실행
 		String viewName = ctrl.handleRequest(request, response);
 		
+		// 4. viewResolver를 통해 viewName에 해당하는 화면 검색
 		String view = null;
 		if (!viewName.contains(".do")) {
 			view = viewResolver.getView(viewName);
@@ -47,6 +51,7 @@ public class DispatcherServlet extends HttpServlet {
 			view = viewName;
 		}
 		
+		// 5. 검색된 화면으로 이동
 		response.sendRedirect(view);
 	}
 }
