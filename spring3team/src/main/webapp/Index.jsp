@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,9 +7,10 @@
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<%@ include file="Top.jsp" %>
 	<header class="header" id="header">
 		<div class="header_layout">
-			<div class="header_option">
+			<!-- <div class="header_option">
 				<div class="header_logo">
 					<img class="header_logo_img" src="logo.jpg">
 				</div>
@@ -26,18 +28,18 @@
 						<a class="header_item_page_link" href="/">마이페이지</a>
 					</li>
 				</ul>
-			</div>
+			</div>  -->
 			<table class="header_notice">
 				<tr>
 					<td style="width:5%"></td>
 					<td class="header_notice_item">
-						<a class="header_notice_page_link" href="/">공지사항</a>
+						<a class="header_notice_page_link" href="ServiceCenter.jsp">공지사항</a>
 					</td>
 					<td class="header_notice_item">
 						<a class="header_notice_page_link" href="/">상품후기</a>
 					</td>
 					<td class="header_notice_item">
-						<a class="header_notice_page_link" href="/">고객센터</a>
+						<a class="header_notice_page_link" href="customer.jsp">고객센터</a>
 					</td>
 					<td style="width:5%"></td>
 				</tr>
