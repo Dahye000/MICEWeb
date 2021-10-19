@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/53a8c415f1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/login.css">
 </head>
+<hr>
+<form action="login.do" method="post">
 <body>
     <div class="wrap">
         <div class="login">
@@ -18,11 +20,11 @@
             </div>
             <div class="login_id">
                 <h4>ID</h4>
-                <input type="email" name="" id="" placeholder="Email">
+                <input type="id" name="id" id="" placeholder="id">
             </div>
             <div class="login_pw">
                 <h4>Password</h4>
-                <input type="password" name="" id="" placeholder="Password">
+                <input type="password" name="password" placeholder="Password">
             </div>
             <div class="login_etc">
                 <div class="checkbox">
@@ -36,6 +38,6 @@
                 <input type="submit" value="login">
             </div>
         </div>
-    </div>
+    </div></form>
 </body>
 </html>

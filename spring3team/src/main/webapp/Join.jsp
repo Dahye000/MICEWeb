@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>È¸¿ø°¡ÀÔ</title>
+  <title>íšŒì›ê°€ìž…</title>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -42,72 +42,65 @@
 
 <body>
   <div class="container">
+  <form name="regForm" methode="get" action="/spring3team/join.do">
     <div class="input-form-backgroud row">
       <div class="input-form col-md-12 mx-auto">
-        <h4 class="mb-3">È¸¿ø°¡ÀÔ</h4>
+        <h4 class="mb-3">íšŒì›ê°€ìž…</h4>
         <form class="validation-form" novalidate>
           <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="name">ÀÌ¸§</label>
-              <input type="text" class="form-control" id="name" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.
-              </div>
             </div>
             
+         <!--   
             <div class="col-md-6 mb-3">
-              <label for="name">ÀüÈ­¹øÈ£</label>
-              <input type="text" class="form-control" id="phone-number" placeholder="" value="" required>
+              <label for="nickname">ë‹‰ë„¤ìž„</label>
+              <input type="text" class="form-control" id="nickname" >
               <div class="invalid-feedback">
-                ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.
+                ë‹‰ë„¤ìž„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.
               </div>
             </div>
-            
-            <div class="col-md-6 mb-3">
-              <label for="nickname">´Ð³×ÀÓ</label>
-              <input type="text" class="form-control" id="nickname" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                ´Ð³×ÀÓÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.
-              </div>
-            </div>
-          </div>
+          </div> 
 
           <div class="mb-3">
-            <label for="email">ÀÌ¸ÞÀÏ</label>
-            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            <label for="email">ì´ë©”ì¼</label>
+            <input type="email" class="form-control" id="email" >
             <div class="invalid-feedback">
-              ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.
+              ì´ë©”ì¼ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.
+            </div>
+          </div>
+          --> 
+          
+          <div class="mb-3">
+            <label for="id">ì•„ì´ë””</label>
+            <input type="text" class="form-control" name="id">
+            <input type="button" value="IDì¤‘ë³µí™•ì¸" onClick="idCheck(this.form.mem_id.value)">
+            <div class="invalid-feedback">
+              idë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.
             </div>
           </div>
           
           <div class="mb-3">
-            <label for="id">¾ÆÀÌµð</label>
-            <input type="email" class="form-control" id="id"required>
+            <label for="pw">ë¹„ë°€ë²ˆí˜¸</label>
+            <input type="password" class="form-control" name="password">
             <div class="invalid-feedback">
-              id¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.
+              ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.
             </div>
           </div>
           
-          <div class="mb-3">
-            <label for="pw">ºñ¹Ð¹øÈ£</label>
-            <input type="password" class="form-control" id="pw" required>
-            <div class="invalid-feedback">
-              ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.
+          <div class="col-md-6 mb-3">
+              <label for="name">ì´ë¦„</label>
+              <input type="text" class="form-control" name="name">
+              <div class="invalid-feedback">
+                ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.<br>
+              </div>
             </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="address">ÁÖ¼Ò</label>
-            <input type="text" class="form-control" id="address" placeholder="¼­¿ïÆ¯º°½Ã °­³²±¸" required>
-            <div class="invalid-feedback">
-              ÁÖ¼Ò¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.
-            </div>
-          </div>
-
-          <div class="mb-3">
-            <label for="address2">»ó¼¼ÁÖ¼Ò<span class="text-muted">&nbsp;(ÇÊ¼ö ¾Æ´Ô)</span></label>
-            <input type="text" class="form-control" id="address2" placeholder="»ó¼¼ÁÖ¼Ò¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.">
-          </div>
+          
+          <div class="col-md-6 mb-3">
+          <td>ì—­í• </td><br>
+              <select name="role">
+              <option value="0">ì„ íƒí•˜ì„¸ìš”.
+              <option value="ê´€ë¦¬ìž">ê´€ë¦¬ìž
+              <option value="ì¼ë°˜">ì¼ë°˜</select>
+            </div></form>
 
           <div class="row">
             <div class="col-md-4 mb-3">
@@ -116,10 +109,10 @@
           <hr class="mb-4">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="aggrement" required>
-            <label class="custom-control-label" for="aggrement">°³ÀÎÁ¤º¸ ¼öÁý ¹× ÀÌ¿ë¿¡ µ¿ÀÇÇÕ´Ï´Ù.</label>
+            <label class="custom-control-label" for="aggrement">ê°œì¸ì •ë³´ ìˆ˜ì§‘ ë° ì´ìš©ì— ë™ì˜í•©ë‹ˆë‹¤.</label>
           </div>
           <div class="mb-4"></div>
-          <button class="btn btn-primary btn-lg btn-block" type="submit">°¡ÀÔ ¿Ï·á</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">ê°€ìž… ì™„ë£Œ</button>
         </form>
       </div>
     </div>
