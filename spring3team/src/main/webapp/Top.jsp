@@ -11,6 +11,10 @@
 	String mem="";
 	if(mem_id == null) mem ="";
 	else mem = "<ul> @@ 님 </ul>";
+	
+	String join="";
+	if(mem_id == null) join ="<a href=Join.jsp> 회원가입</a>";
+	else join = "";
 %>
 
 
@@ -30,13 +34,13 @@
 						<a class="header_item_page_link" href="login.jsp"><%=log %></a>
 					</li>
 					<li class="header_item">
-						<a class="header_item_page_link" href="Join.jsp">회원가입</a>
+						<a class="header_item_page_link" href="Join.jsp"><%=join %></a>
 					</li>
 					<li class="header_item">
-						<a class="header_item_page_link" href="/">관심상품</a>
+						<a class="header_item_page_link" href="interest.jsp">관심상품</a>
 					</li>
 					<li class="header_item">
-						<a class="header_item_page_link" href="/">마이페이지</a>
+						<a class="header_item_page_link" href="mypage.jsp">마이페이지</a>
 					</li>
 				</ul>
 			</div>
