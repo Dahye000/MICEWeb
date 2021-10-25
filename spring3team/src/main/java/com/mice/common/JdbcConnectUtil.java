@@ -7,9 +7,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.mice.common.JdbcConnectUtil;
+
 
 public class JdbcConnectUtil {
 	private static JdbcConnectUtil mDao;
+
+	private static Object instance;
 
 	private PreparedStatement pstmt;
 	private ResultSet rs;
@@ -53,6 +57,17 @@ public class JdbcConnectUtil {
 			}
 		}
 	}
+	
+//	public static JdbcConnectUtil getInstance() {
+//        if (instance == null) {
+//            synchronized (JdbcConnectUtil.class) {
+//                if (instance == null) {
+//                    instance = new JdbcConnectUtil();
+//                }
+//            }
+//        }
+//        return (JdbcConnectUtil) instance;
+//    }
 
 
 	

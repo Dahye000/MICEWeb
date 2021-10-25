@@ -17,6 +17,7 @@ public class HandlerMapping {
 		mappings.put("/logout.do", (Controller) new com.mice.view.user.LogoutController());	
 		mappings.put("/join.do", (Controller) new com.mice.view.user.JoinController());	
 		mappings.put("/adminLogin.do", new com.mice.view.user.AdminLoginController());
+		mappings.put("/getMemberList.do", new com.mice.view.user.MemberManageController());
 	}
 
 	public Controller getController(String path) {
