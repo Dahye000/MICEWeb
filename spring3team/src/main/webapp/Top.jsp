@@ -24,7 +24,7 @@
 		<div class="header_layout">
 			<div class="header_option">
 				<div class="header_logo">
-					<img class="header_logo_img" src="logo.jpg">
+					<a href="Index.jsp"><img class="header_logo_img" src="logo.jpg"></a>
 				</div>
 				<ul class="header_items">
 					<li class="header_item">

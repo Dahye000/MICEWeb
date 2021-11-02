@@ -33,7 +33,7 @@
 				<tr>
 					<td style="width:5%"></td>
 					<td class="header_notice_item">
-						<a class="header_notice_page_link" href="ServiceCenter.jsp">공지사항</a>
+						<a class="header_notice_page_link" href="Notice.jsp">공지사항</a>
 					</td>
 					<td class="header_notice_item">
 						<a class="header_notice_page_link" href="/">상품후기</a>
