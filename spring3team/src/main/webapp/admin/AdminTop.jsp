@@ -14,6 +14,10 @@
 	String adMember="";
 	if(ad_id == null) adMember = "<a href=adminLogin.jsp> 로그인 </a>";
 	else adMember = "<a href=MemberManage.jsp>회원 관리</a>";
+	
+	String adNotice="";
+	if(ad_id == null) adNotice = "<a href=adminLogin.jsp> 로그인 </a>";
+	else adNotice = "<a href=notice.jsp>공지사항</a>";
 %>
 <h1><center>관리자 페이지</center>  </h1>
 
@@ -55,6 +59,6 @@ body { padding-top: 50px; }
     <td align="center" class="nav-link"><%=adLog%></td>
     <td align="center" class="nav-link"><%=ad%></td>
     <td align="center" class="nav-link"><%=adMember%></td>
-    <td align="center" class="nav-link"><a href="#"> 공지사항 </a></td>
+    <td align="center" class="nav-link"><%=adNotice%></td>
   </tr>
 </table>
