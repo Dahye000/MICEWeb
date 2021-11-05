@@ -19,7 +19,7 @@ public class MemberDao {
 
 	public boolean loginCheck(String id, String password) {
 
-		System.out.println("dao실시");
+		System.out.println("dao실행");
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -90,6 +90,43 @@ public class MemberDao {
 		}
 		return flag;
 	}
+	
+	public void memberupdate(String id, String password, String Name, String Role) {
+		Connection con = null;
+		con = com.mice.common.JdbcConnectUtil.getConnection();
+		PreparedStatement pstmt = null;
+		boolean flag = false;
+		try {
+			
+			String strQuery = "update users set password = ?, name = ?, role = ?  where id = ?";
+			pstmt = con.prepareStatement(strQuery);
+			pstmt.setString(1, password);
+			pstmt.setString(2, Name);
+			pstmt.setString(3, Role);
+			pstmt.setString(4, id);
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			System.out.println("Exception" + ex);
+		} finally {
+			com.mice.common.JdbcConnectUtil.close(con, pstmt, null);
+		}
+	}
+	
+	public void memberdelete(String member) {
+		Connection con = null;
+		con = com.mice.common.JdbcConnectUtil.getConnection();
+		PreparedStatement pstmt = null;
+		try {
+			String strQuery = "DELETE FROM users WHERE id = ?";
+			pstmt = con.prepareStatement(strQuery);
+			pstmt.setString(1, member);
+			pstmt.executeUpdate();
+		} catch (Exception ex) {
+			System.out.println("Exception" + ex);
+		} finally {
+			com.mice.common.JdbcConnectUtil.close(con, pstmt, null);
+		}
+	}
 
 	public static Vector getMemberList() {
 		Connection con = null;
@@ -99,7 +136,7 @@ public class MemberDao {
 
 		try {
 			con = com.mice.common.JdbcConnectUtil.getConnection();
-			String strQuery = "SELECT * FROM springdb.users;";
+			String strQuery = "SELECT * FROM maybedb.users;";
 			pstmt = con.prepareStatement(strQuery);
 			rs = pstmt.executeQuery(strQuery);
 
@@ -119,8 +156,7 @@ public class MemberDao {
 		return vecList;
 
 	}
-
-
+	
 //	public class MemberMgr {
 //
 //		public MemberMgr() {

@@ -49,7 +49,7 @@ public class NoticeDao {
 
 		try {
 			con = com.mice.common.JdbcConnectUtil.getConnection();
-			String strQuery = "SELECT * FROM springdb.board;";
+			String strQuery = "SELECT * FROM maybedb.board;";
 			pstmt = con.prepareStatement(strQuery);
 			rs = pstmt.executeQuery(strQuery);
 
@@ -68,5 +68,31 @@ public class NoticeDao {
 		}
 		return vecList;
 
+	}
+	
+	public String[] getNoticeInfo(String number) {
+		Connection con = null;
+		con = com.mice.common.JdbcConnectUtil.getConnection();
+		String strQuery = "select * FROM maybedb.board where sno =?";
+		String[] information = new String[4];
+		ResultSet rs = null;
+		PreparedStatement pstmt = null;
+		try {
+			pstmt = con.prepareStatement(strQuery);
+			pstmt.setString(1, number);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				information[0] = rs.getString("sno");
+				information[1] = rs.getString("title");
+				information[2] = rs.getString("content");
+				information[3] = rs.getString("regdate");
+			}
+		} catch (Exception ex) {
+			System.out.println("Exception" + ex);
+		} finally {
+			com.mice.common.JdbcConnectUtil.close(con, pstmt, null);
+		}
+		return information;
 	}
 	}
