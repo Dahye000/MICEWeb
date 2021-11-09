@@ -30,7 +30,7 @@
 		<td align="center"><%=mDto.getPassword()%></td>
 		<td align="center"><%=mDto.getName()%></td>
 		<td align="center"><%=mDto.getRole()%></td>
-		<td align="center"><a href="MemberDel.jsp?memid=<%=mDto.getId()%>">삭제</a></td>
+		<td align="center"><a href="MemberDelete.do?memid=<%=mDto.getId()%>">삭제</a></td>
 		<td align="center"><a href="MemberUpdate.jsp?memid=<%=mDto.getId()%>">수정</a></td>
 		</tr>
 		<%}%>

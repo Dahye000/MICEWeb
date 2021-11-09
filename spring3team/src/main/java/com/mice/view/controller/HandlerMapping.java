@@ -3,11 +3,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import com.mice.view.user.JoinController;
-import com.mice.view.user.LoginController;
-import com.mice.view.user.LogoutController;
-
-
 public class HandlerMapping {
 	private Map<String, Controller> mappings;
 
@@ -20,6 +15,8 @@ public class HandlerMapping {
 		mappings.put("/getMemberList.do", new com.mice.view.user.MemberManageController());
 		mappings.put("/noticeInput.do", new com.mice.view.user.AdNoticeInsertController());
 		mappings.put("/notice.do", new com.mice.view.user.AdminNoticeController());
+		mappings.put("/MemberDelete.do", new com.mice.view.user.MemberDeleteController());
+		mappings.put("/MemberModify.do", new com.mice.view.user.MemberModifyController());
 	}
 
 	public Controller getController(String path) {

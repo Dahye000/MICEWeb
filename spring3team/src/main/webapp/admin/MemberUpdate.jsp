@@ -12,7 +12,7 @@ session.setAttribute("Manage_id",mem_id);
 </head>
 <body>
 	<h3>Update</h3>
-	<form name="memberList" methode="get" action="MemberUpdateCnt.jsp">
+	<form name="memberList" methode="get" action="MemberModify.do">
 		<table>
 			<tr>
 				<td>기존 아이디</td>
