@@ -3,11 +3,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-import com.mice.view.user.JoinController;
-import com.mice.view.user.LoginController;
-import com.mice.view.user.LogoutController;
-
-
 public class HandlerMapping {
 	private Map<String, Controller> mappings;
 
